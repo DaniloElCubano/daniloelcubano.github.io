@@ -1,0 +1,59 @@
+const handleOutputImageForTemplate5 = (uploadedFile, selectedTemplateSrc) => {
+    // adapted from: https://pqina.nl/blog/applying-a-circular-crop-mask-to-an-image/
+
+    // let's load the image data
+    const image = new Image();
+    image.onload = () => {
+        // use min size so we get a square
+        // const size = Math.min(image.naturalWidth, image.naturalHeight);
+        const size = 900;
+
+        // let's update the canvas size
+        canvas.width = size;
+        canvas.height = size;
+
+        // draw image to canvas
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(image, 0, 0, size, size);
+
+        // only draw image where mask is
+        ctx.globalCompositeOperation = 'destination-in';
+
+        // draw our circle mask
+        ctx.fillStyle = '#000';
+        ctx.beginPath();
+        ctx.arc(
+            size * 0.5, // x
+            size * 0.5, // y
+            size * 0.5, // radius
+            0, // start angle
+            2 * Math.PI // end angle
+        );
+        ctx.fill();
+
+        // restore to default composite operation (is draw over current image)
+        ctx.globalCompositeOperation = 'source-over';
+
+        // show canvas
+        // canvas.hidden = false;
+
+        mergeImages(
+            [
+                { src: selectedTemplateSrc },
+                { src: canvas.toDataURL(), x: 305, y: 275 }
+            ],
+            {
+                width: 1500,
+                heigh: 1500
+            })
+            .then(b64 => {
+                img.style.display = 'block'
+                img.src = b64;
+
+                let imgDownload = document.getElementById('imgDownload');
+                imgDownload.href = b64;
+            });
+    };
+
+    image.src = URL.createObjectURL(uploadedFile);
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style/style.css">
+
+    <script src="https://unpkg.com/merge-images"></script>
+</head>
+
+<body>
+    <div style="display: inline-block">
+        <h3>1. Selecciona una plantilla</h3>
+
+        <div style="padding: 30px;">
+
+
+            <div style="float:left">
+                <img width="200" height="200" src="./samples/sample_template1.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template2.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template3.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template4.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template5.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template5_transparent.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template7.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+
+            <div style="float:left; padding-left: 20px;">
+                <img width="200" height="200" src="./samples/sample_template8.png" class="p12"
+                    onclick="setSelectedTemplate(this)">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div style="display: inline-block">
+        <h3>2. Llena los campos de texto si aplica (Deja en blanco si no)</h3>
+
+        <label for="text1"><b>Imagen Texto 1</b></label>
+        <input type="text" id="text1" />
+        <br>
+        <br>
+        <label for="text2"><b>Imagen Texto 2</b></label>
+        <input type="text" id="text2" />
+    </div>
+
+    <hr>
+
+    <div style="display: inline-block">
+        <h3>3. Selecciona una Imagen</h3>
+
+        <input type="file" name="inputFile" id="inputFile" class="inputfile" accept="image/*">
+        <label class="custom-btn" for="inputFile">Seleccionar imagen</label>
+    </div>
+
+    <hr>
+
+    <div style="display: inline-block">
+        <h3>4. Descarga la nueva Imagen</h3>
+
+        <canvas hidden id="canvas-template" name="canvas-template"></canvas>
+        <canvas hidden id="canvas-template-text1" name="canvas-template-text1"></canvas>
+        <canvas hidden id="canvas-template-text2" name="canvas-template-text2"></canvas>
+
+        <img width="250" height="250" src="./templates/default.png" id="outputImage" name="outputImage" class="p12">
+        <div>
+            <a href="default.png" download="pic.png" id="imgDownload" name="imgDownload" class="custom-btn">Descargar
+                imagen</a>
+        </div>
+    </div>
+
+
+    <script src="./scripts/template_handler.js"></script>
+    <script src="./scripts/template1.js"></script>
+    <script src="./scripts/template2.js"></script>
+    <script src="./scripts/template3.js"></script>
+    <script src="./scripts/template4.js"></script>
+    <script src="./scripts/template5.js"></script>
+    <script src="./scripts/template7.js"></script>
+    <script src="./scripts/template8.js"></script>
+</body>
+
+</html>

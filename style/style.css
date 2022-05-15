@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'CaveatBrushRegular';
+    src: url('CaveatBrush-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('Caveat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Alike';
+    src: url('Alike-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LumiosTypewriterNew';
+    src: url('LumiosTypewriter-New.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sanchez';
+    src: url('Sanchez-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HappyMonkeyRegular';
+    src: url('HappyMonkey-Regular.ttf') format('truetype');
+}
+
+/* adapted from https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus,
+.inputfile:hover,
+a:hover {
+    background-color: red;
+}
+
+.inputfile {
+    cursor: pointer;
+}
+
+.custom-btn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.imgSelected {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.p12 {
+    padding: 12px;
+}
